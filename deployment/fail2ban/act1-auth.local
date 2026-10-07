@@ -1,0 +1,25 @@
+[act1-auth]
+
+# Activa esta protección
+enabled = true
+
+# Filtro que creamos en act1-auth.conf
+filter = act1-auth
+
+# Puertos públicos protegidos
+port = http,https
+
+# Archivo de log específico de Nginx
+logpath = /var/log/nginx/act1_auth.log
+
+# Número máximo de intentos fallidos
+maxretry = 5
+
+# Periodo durante el cual se contabilizan los intentos
+findtime = 10m
+
+# Tiempo durante el cual se bloqueará la IP
+bantime = 15m
+
+# Motor para monitorear el archivo de log
+backend = auto
